@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Kampus - Kampus Merakyat</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <h1><a href="index.html">Kampus Merakyat</a></h1>
+
+
+        <nav>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="akademik.html">Akademik</a>
+    <a href="pendaftaran.html">Pendaftaran</a>
+</nav>
+
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Profil Kampus Merakyat</h2>
+    <p>Mengenal lebih dekat Kampus Merakyat</p>
+</section>
+
+<!-- PROFIL -->
+<section class="content reveal">
+    <h2>Profil Kampus</h2>
+    <p>
+        Kampus Merakyat adalah tempat belajar yang terbuka untuk semua kalangan.
+        Kampus ini hadir dengan semangat kebersamaan dan pendidikan berkualitas
+        yang terjangkau bagi seluruh masyarakat.
+    </p>
+</section>
+
+<!-- SEJARAH -->
+<section class="content reveal">
+    <h2>Sejarah Kampus</h2>
+    <p>
+        Kampus Merakyat didirikan pada tahun 2005 sebagai komitmen menghadirkan
+        pendidikan tinggi berkualitas dan inklusif.
+    </p>
+</section>
+
+<!-- NILAI -->
+<section class="section reveal">
+    <h2>Nilai & Budaya Kampus</h2>
+
+    <div class="nilai-container">
+        <div class="nilai-card">
+            <h3>Integritas</h3>
+            <p>Menjunjung kejujuran dan tanggung jawab.</p>
+        </div>
+        <div class="nilai-card">
+            <h3>Inovasi</h3>
+            <p>Mendorong kreativitas dan pengembangan teknologi.</p>
+        </div>
+        <div class="nilai-card">
+            <h3>Kolaborasi</h3>
+            <p>Membangun kerja sama civitas akademika.</p>
+        </div>
+    </div>
+</section>
+
+<!-- STRUKTUR -->
+<section class="section reveal">
+    <h2>Struktur Organisasi</h2>
+
+    <div class="struktur-container">
+        <div class="struktur-card">
+            <img src="image/rektor.jpg">
+            <h3>Dr. Ahmad Wijaya</h3>
+            <p>Rektor</p>
+        </div>
+        <div class="struktur-card">
+            <img src="image/warek.jpg">
+            <h3>Siti Rahma, M.Kom</h3>
+            <p>Wakil Rektor</p>
+        </div>
+    </div>
+</section>
+
+<!-- VISI MISI -->
+<section class="section reveal">
+    <h2>Visi & Misi</h2>
+
+    <div class="visi-misi-container">
+        <div class="visi">
+            <h3>Visi</h3>
+            <p>Menjadi perguruan tinggi unggulan dan berdaya saing global.</p>
+        </div>
+        <div class="misi">
+            <h3>Misi</h3>
+            <ul>
+                <li>Pendidikan berkualitas</li>
+                <li>Penelitian dan inovasi</li>
+                <li>Pengabdian masyarakat</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2026 Kampus Merakyat</p>
+    </div>
+</footer>
+
+<script>
+function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            item.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+        link.classList.add("active");
+    }
+});
+</script>
+
+
+</body>
+</html>

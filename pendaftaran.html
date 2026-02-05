@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Mahasiswa Baru - Kampus Merakyat</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <h1><a href="index.html">Kampus Merakyat</a></h1>
+
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="profil.html">Profil</a>
+            <a href="akademik.html">Akademik</a>
+            <a href="pendaftaran.html">Pendaftaran</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Pendaftaran Mahasiswa Baru</h2>
+    <p>Tahun Akademik 2026/2027</p>
+</section>
+
+<!-- INFO PMB -->
+<section class="content reveal">
+    <h2>Informasi Pendaftaran</h2>
+    <p>
+       Kampus Merakyat membuka pendaftaran mahasiswa baru bagi lulusan SMA/SMK/MA dan sederajat. Pendaftaran dilakukan secara online maupun offline dengan proses yang mudah dan cepat.
+Tersedia program studi Teknik Informatika, Sistem Informasi, Manajemen, dan Akuntansi. Biaya pendidikan terjangkau serta tersedia sistem cicilan dan beasiswa.
+Untuk informasi pendaftaran lebih lanjut, silakan kunjungi website resmi atau datang langsung ke Kampus Merakyat.</p>
+</section>
+
+<!-- SYARAT -->
+<section class="content reveal">
+    <h2>Syarat Pendaftaran</h2>
+    <ul>
+        <li>Lulusan SMA/SMK/MA sederajat</li>
+        <li>Fotokopi ijazah / SKL</li>
+        <li>Fotokopi KTP / KK</li>
+        <li>Pas foto terbaru</li>
+    </ul>
+</section>
+
+<!-- FORM -->
+<section class="section reveal">
+    <h2>Formulir Pendaftaran</h2>
+
+    <form class="form-pendaftaran">
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="No. Telepon" required>
+
+        <select required>
+            <option value="">Pilih Program Studi</option>
+            <option>Teknik Informatika</option>
+            <option>Sistem Informasi</option>
+            <option>Manajemen</option>
+            <option>Akuntansi</option>
+        </select>
+
+        <button type="submit">Daftar Sekarang</button>
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2026 Kampus Merakyat</p>
+    </div>
+</footer>
+
+<script>
+function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            item.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+        link.classList.add("active");
+    }
+});
+</script>
+
+
+</body>
+</html>

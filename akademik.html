@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Akademik - Kampus Merakyat</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+       <h1><a href="index.html">Kampus Merakyat</a></h1>
+
+
+       <nav>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="akademik.html">Akademik</a>
+    <a href="pendaftaran.html">Pendaftaran</a>
+</nav>
+
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Akademik</h2>
+    <p>Informasi Program Studi Kampus Merakyat</p>
+</section>
+
+<section id="akademik" class="content">
+    <h2>Informasi Akademik</h2>
+    <ul>
+        <li><a href="#ti">Teknik Informatika</a></li>
+        <li><a href="#si">Sistem Informasi</a></li>
+        <li><a href="#manajemen">Manajemen</a></li>
+        <li><a href="#akuntansi">Akuntansi</a></li>
+    </ul>
+</section>
+
+<section id="ti" class="content">
+    <h2>Teknik Informatika</h2>
+    <p>Teknik Informatika adalah jurusan yang mempelajari bagaimana teknologi dan komputer bekerja secara mendalam. 
+        Mahasiswa Teknik Informatika belajar membuat program atau aplikasi dengan berbagai bahasa pemrograman, memahami logika dan algoritma, mengelola basis data, 
+        membangun website dan aplikasi mobile, serta mempelajari jaringan komputer dan keamanan sistem. Selain itu, ada juga pembahasan tentang kecerdasan buatan dan pengolahan data. 
+        Jurusan ini cocok buat orang yang suka logika, problem solving, dan dunia teknologi..</p>
+</section>
+
+<section id="si" class="content">
+    <h2>Sistem Informasi</h2>
+    <p>Sistem Informasi mempelajari teknologi komputer tetapi dikombinasikan dengan kebutuhan bisnis dan organisasi. 
+        Di jurusan ini, mahasiswa belajar bagaimana merancang dan mengelola sistem informasi yang digunakan di perusahaan, seperti sistem keuangan, sistem akademik, atau sistem penjualan. 
+        Selain dasar pemrograman dan basis data, mahasiswa juga mempelajari analisis kebutuhan sistem, manajemen proyek, serta bagaimana teknologi membantu pengambilan keputusan dalam bisnis. 
+        Jurusan ini cocok buat yang tertarik pada IT namun juga ingin paham proses bisnis.</p>
+</section>
+
+<section id="manajemen" class="content">
+    <h2>Manajemen</h2>
+    <p>Manajemen adalah jurusan yang berfokus pada cara mengelola organisasi dan bisnis agar berjalan dengan baik.
+         Mahasiswa Manajemen mempelajari bagaimana mengatur sumber daya manusia, mengelola keuangan perusahaan, menyusun strategi pemasaran, 
+         serta mengambil keputusan yang tepat. Selain itu, ada juga pembelajaran tentang kepemimpinan, kewirausahaan, dan etika bisnis. 
+        Jurusan ini cocok bagi mereka yang tertarik pada dunia bisnis, organisasi, dan kepemimpinan.</p>
+</section>
+
+<section id="akuntansi" class="content">
+    <h2>Akuntansi</h2>
+    <p>Akuntansi merupakan jurusan yang mempelajari pencatatan dan pengelolaan keuangan secara sistematis. Mahasiswa Akuntansi belajar bagaimana mencatat transaksi keuangan, 
+        menyusun laporan keuangan, melakukan analisis keuangan, memahami perpajakan, serta melakukan audit. 
+        Ketelitian dan kemampuan menganalisis angka sangat dibutuhkan di jurusan ini karena berkaitan langsung dengan kondisi keuangan suatu perusahaan atau organisasi.</p>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2026 Kampus Merakyat</p>
+    </div>
+</footer>
+
+<script>
+function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            item.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+        link.classList.add("active");
+    }
+});
+</script>
+
+
+</body>
+</html>
