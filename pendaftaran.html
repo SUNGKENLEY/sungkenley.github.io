@@ -51,26 +51,43 @@ Untuk informasi pendaftaran lebih lanjut, silakan kunjungi website resmi atau da
     </ul>
 </section>
 
-<!-- FORM -->
-<section class="section reveal">
-    <h2>Formulir Pendaftaran</h2>
+<section id="pendaftaran" class="pendaftaran">
+    <div class="form-card">
+        <h2>Formulir Pendaftaran Mahasiswa Baru</h2>
+        <p>Silakan isi data diri dengan benar</p>
 
-    <form class="form-pendaftaran">
-        <input type="text" placeholder="Nama Lengkap" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="No. Telepon" required>
+        <form id="formPendaftaran">
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+            </div>
 
-        <select required>
-            <option value="">Pilih Program Studi</option>
-            <option>Teknik Informatika</option>
-            <option>Sistem Informasi</option>
-            <option>Manajemen</option>
-            <option>Akuntansi</option>
-        </select>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="contoh@email.com">
+            </div>
 
-        <button type="submit">Daftar Sekarang</button>
-    </form>
+            <div class="input-group">
+                <label>No. Telepon</label>
+                <input type="text" id="telp" placeholder="08xxxxxxxxxx">
+            </div>
+
+            <div class="input-group">
+                <label>Program Studi</label>
+                <select id="prodi">
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Manajemen">Manajemen</option>
+                    <option value="Akuntansi">Akuntansi</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-daftar">Daftar Sekarang</button>
+        </form>
+    </div>
 </section>
+
 
 <footer class="footer">
     <div class="footer-bottom">
@@ -102,6 +119,34 @@ document.querySelectorAll("nav a").forEach(link => {
     }
 });
 </script>
+
+<!-- SCRIPT FORM -->
+<script>
+document.getElementById("formPendaftaran").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nama = document.getElementById("nama").value;
+    let email = document.getElementById("email").value;
+    let telp = document.getElementById("telp").value;
+    let prodi = document.getElementById("prodi").value;
+
+    if (nama === "" || email === "" || telp === "" || prodi === "") {
+        alert("⚠️ Semua data wajib diisi!");
+    } else {
+        alert(
+            "✅ Pendaftaran Berhasil!\n\n" +
+            "Nama Lengkap: " + nama + "\n" +
+            "Email: " + email + "\n" +
+            "No. Telepon: " + telp + "\n" +
+            "Program Studi: " + prodi
+        );
+    }
+});
+</script>
+
+</body>
+</html>
+
 
 
 </body>
